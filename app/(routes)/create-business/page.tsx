@@ -13,6 +13,7 @@ function CreateBusiness() {
   const [businessName, setBusinessName] = useState<any>();
   const db = getFirestore(app);
   const { user }: any = useKindeBrowserClient();
+  console.log(user);
   const router = useRouter();
 
   const onCreateBusiness = async () => {
