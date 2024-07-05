@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useKindeBrowserClient,
 } from "@kinde-oss/kinde-auth-nextjs";
@@ -27,7 +27,7 @@ const Dashboard = () => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (user) {
       checkBusinessRegistration();
     }
@@ -42,7 +42,7 @@ const Dashboard = () => {
               Effortlessly Schedule Meetings
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              Simplify your team's scheduling process with our intuitive app.
+              Simplify your team scheduling process with our intuitive app.
             </p>
             <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded" onClick={() => router.push("/create-meeting")}>
               Get Started

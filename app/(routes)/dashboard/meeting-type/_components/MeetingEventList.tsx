@@ -72,7 +72,7 @@ function MeetingEventList() {
         lg:grid-cols-3 gap-7"
     >
       {eventList.length > 0 ? (
-        eventList?.map((event: any, index) => (
+        eventList?.map((event: any, index: any) => (
           <div
             key={index}
             className="border shadow-md 

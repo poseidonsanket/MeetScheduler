@@ -88,11 +88,12 @@ function PreviewMeeting({ formValue, setFormValue }: any) {
             className="flex flex-col w-full overflow-auto gap-4 p-5"
             style={{ maxHeight: "400px" }}
           >
-            {timeSlots?.map((time: any) => (
+            {timeSlots?.map((time: any, index: any) => (
               <Button
                 className={`border-primary
                          text-primary ${timeSlot == time && "bg-blue-200"}`}
                 variant="outline"
+                key={index}
                 onClick={() => setTimeSlot(time)}
               >
                 {time}

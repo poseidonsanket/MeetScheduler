@@ -14,7 +14,7 @@ function ScheduledMeetingList({ meetingList }: any) {
     <div>
       {meetingList &&
         meetingList.map((meeting: any, index: any) => (
-          <Accordion type="single" collapsible key={index}>
+          <Accordion type="single" collapsible key={meeting.id}>
             <AccordionItem value="item-1">
               <AccordionTrigger>{meeting?.eventName}</AccordionTrigger>
               <AccordionContent>
