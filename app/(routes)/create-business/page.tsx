@@ -13,17 +13,14 @@ function CreateBusiness() {
   const [businessName, setBusinessName] = useState<any>();
   const db = getFirestore(app);
   const { user }: any = useKindeBrowserClient();
-  console.log(user);
   const router = useRouter();
 
   const onCreateBusiness = async () => {
-    console.log("btn Click", businessName);
     await setDoc(doc(db, "Business", user.email), {
       businessName: businessName.replace(" ", "_"),
       email: user.email,
       userName: user.given_name + " " + user.family_name,
     }).then((resp) => {
-      console.log("Document Saved");
       toast("New Business Created!");
       router.replace("/dashboard");
     });
