@@ -6,8 +6,10 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 function PreviewMeeting({ formValue, setFormValue }: any) {
-  const [date, setDate] = useState<Date | undefined>(new Date());
-  const [timeSlot, setTimeSlot] = useState<any>();
+  const [date, setDate] = useState<Date | undefined>(
+    formValue?.date ? formValue.date.toDate() : undefined
+  );
+  const [timeSlot, setTimeSlot] = useState<any>(formValue?.time);
   const [timeSlots, setTimeSlots] = useState<any>();
 
   useEffect(() => {
@@ -23,6 +25,8 @@ function PreviewMeeting({ formValue, setFormValue }: any) {
       });
     }
   }, [date, timeSlot]);
+
+  console.log(new Date(), formValue?.date);
 
   /**
    * Used to create timeslot depends on interval
@@ -88,8 +92,9 @@ function PreviewMeeting({ formValue, setFormValue }: any) {
             className="flex flex-col w-full overflow-auto gap-4 p-5"
             style={{ maxHeight: "400px" }}
           >
-            {timeSlots?.map((time: any) => (
+            {timeSlots?.map((time: any, index: any) => (
               <Button
+                key={index}
                 className={`border-primary
                          text-primary ${timeSlot == time && "bg-blue-200"}`}
                 variant="outline"

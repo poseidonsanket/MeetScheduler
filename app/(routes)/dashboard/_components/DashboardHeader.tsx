@@ -20,7 +20,7 @@ function DashboardHeader() {
 
   return (
     user && (
-      <div className="py-1 px-10">
+      <div className="py-2 px-10">
         <div>
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center float-right">
@@ -36,8 +36,6 @@ function DashboardHeader() {
             <DropdownMenuContent>
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Settings</DropdownMenuItem>
 
               <DropdownMenuItem>
                 <LogoutLink>Logout</LogoutLink>
