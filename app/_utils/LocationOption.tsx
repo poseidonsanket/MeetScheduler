@@ -1,4 +1,4 @@
-export default[
+export const LocationOption = [
     {
         name:'Zoom',
         icon:'/zoom.png'

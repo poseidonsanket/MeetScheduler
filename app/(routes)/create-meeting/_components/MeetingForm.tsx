@@ -9,10 +9,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import LocationOption from "@/app/_utils/LocationOption";
+import {LocationOption} from "@/app/_utils/LocationOption";
 import Image from "next/image";
 import Link from "next/link";
-import ThemeOptions from "@/app/_utils/ThemeOption";
+import {ThemeOptions} from "@/app/_utils/ThemeOption";
 import { doc, getFirestore, setDoc } from "firebase/firestore";
 import { app } from "@/config/firebaseConfig";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";

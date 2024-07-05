@@ -33,7 +33,7 @@ function MeetingEventList() {
   useEffect(() => {
     user && getEventList();
     user && BusinessInfo();
-  }, [user]);
+  }, []);
   const getEventList = async () => {
     setEventList([]);
     const q = query(

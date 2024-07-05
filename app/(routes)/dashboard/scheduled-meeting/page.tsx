@@ -19,7 +19,7 @@ function ScheduledMeeting() {
   const [meetingList, setMeetingList] = useState<any | undefined>([]);
   useEffect(() => {
     user && getScheduledMeetings();
-  }, [user]);
+  }, []);
 
   const getScheduledMeetings = async () => {
     setMeetingList([]);
