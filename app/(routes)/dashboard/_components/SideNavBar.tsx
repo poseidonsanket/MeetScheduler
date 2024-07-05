@@ -4,9 +4,11 @@ import { Briefcase, Calendar, Clock, Plus, Settings } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 function SideNavBar() {
+  const router = useRouter();
   const menu = [
     {
       id: 1,
@@ -31,7 +33,13 @@ function SideNavBar() {
   return (
     <div className="p-5 py-14">
       <div className="flex justify-center">
-        <Image src="/logo.svg" width={150} height={150} alt="logo" />
+        <Image
+          src="/logo.svg"
+          width={150}
+          height={150}
+          alt="logo"
+          onClick={() => router.push("/dashboard")}
+        />
       </div>
 
       <Link href={"/create-meeting"}>

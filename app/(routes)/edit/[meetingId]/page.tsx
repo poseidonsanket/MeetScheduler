@@ -16,7 +16,7 @@ function CreateMeeting() {
       fetchMeetingData(meetingId);
     }
   }, [meetingId]);
-  console.log(formValue);
+
   const fetchMeetingData = async (id: any) => {
     const db = getFirestore(app);
     const docRef = doc(db, "MeetingEvent", id);
@@ -30,7 +30,8 @@ function CreateMeeting() {
     }
   };
 
-  console.log(formValue);
+  // console.log(formValue);
+
   return loading ? (
     <div>Loading</div>
   ) : (

@@ -30,12 +30,10 @@ function ScheduledMeeting() {
     const querySnapshot = await getDocs(q);
 
     querySnapshot.forEach((doc) => {
-      console.log(doc.data());
       setMeetingList((prev: any) => [...prev, doc.data()]);
     });
   };
 
-  console.log(meetingList);
 
   /**
    * Used to Filter the Meeting
@@ -44,9 +42,6 @@ function ScheduledMeeting() {
    *
    */
 
-  const date = meetingList[0]?.date;
-  const time = meetingList[0]?.time;
-  console.log(date, time);
   const filterMeetingList = (type: any) => {
     const currentDate = new Date();
     return meetingList.filter((item: any) => {

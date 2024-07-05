@@ -20,8 +20,10 @@ import { toast } from "sonner";
 import { useParams, useRouter } from "next/navigation";
 
 function MeetingForm({ setFormValue, formValue }: any) {
+  console.log(formValue);
   const params = useParams();
   const metId = params.meetingId;
+  console.log(metId);
   const [location, setLocation] = useState<any>(formValue?.location);
   const [themeColor, setThemeColor] = useState(formValue?.themeColor);
   const [eventName, setEventName] = useState(formValue?.eventName);
@@ -35,6 +37,7 @@ function MeetingForm({ setFormValue, formValue }: any) {
   const router = useRouter();
   useEffect(() => {
     setFormValue({
+      ...formValue,
       eventName: eventName,
       duration: duration,
       locationType: locationType,
@@ -43,14 +46,21 @@ function MeetingForm({ setFormValue, formValue }: any) {
     });
   }, [eventName, duration, locationType, locationUrl, themeColor]);
 
-  const date = formValue?.dateString;
-  const time = formValue?.timeSlot;
+  const date = formValue?.date;
+  const time = formValue?.time;
+  console.log(date, time);
 
   const onCreateClick = async () => {
     if (!metId) {
       console.error("Invalid form value or missing ID");
       return;
     }
+
+    if (!date || !time) {
+      console.error("Date or time is undefined");
+      return;
+    }
+
     //@ts-ignore
     const meetingEventRef: any = doc(db, "MeetingEvent", metId);
 
@@ -65,6 +75,7 @@ function MeetingForm({ setFormValue, formValue }: any) {
       date: date,
       time: time,
     });
+    console.log(formValue);
 
     toast("Meeting Event Updated!");
     router.replace("/dashboard/meeting-type");
@@ -164,18 +175,7 @@ function MeetingForm({ setFormValue, formValue }: any) {
         </div>
       </div>
 
-      <Button
-        className="w-full mt-9"
-        disabled={
-          !eventName ||
-          !duration ||
-          !locationType ||
-          !locationUrl ||
-          !date ||
-          !time
-        }
-        onClick={() => onCreateClick()}
-      >
+      <Button className="w-full mt-9" onClick={() => onCreateClick()}>
         Create
       </Button>
     </div>

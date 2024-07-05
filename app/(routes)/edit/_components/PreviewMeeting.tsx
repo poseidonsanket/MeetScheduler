@@ -26,7 +26,6 @@ function PreviewMeeting({ formValue, setFormValue }: any) {
     }
   }, [date, timeSlot]);
 
-  console.log(new Date(), formValue?.date);
 
   /**
    * Used to create timeslot depends on interval

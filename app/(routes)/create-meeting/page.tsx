@@ -5,7 +5,6 @@ import PreviewMeeting from "./_components/PreviewMeeting";
 
 function CreateMeeting() {
   const [formValue, setFormValue] = useState();
-  console.log(formValue);
   return (
     <div className="grid grid-cols-1 md:grid-cols-3">
       {/* Meeting Form  */}

@@ -14,34 +14,56 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useRouter } from "next/navigation";
 
 function DashboardHeader() {
   const { user }: any = useKindeBrowserClient();
+  const router = useRouter();
 
   return (
     user && (
-      <div className="py-2 px-10">
-        <div>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center float-right">
-              <Image
-                src={user?.picture}
-                alt="logo"
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
-              <ChevronDown />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
+      <div className="flex justify-between items-center ">
+        <header className="bg-white p-5">
+          <div className="text-xl font-bold">Meeting Scheduler</div>
+        </header>
+        <div className="pr-5">
+          <div className="">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center">
+                <Image
+                  src={user?.picture}
+                  alt="logo"
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+                <ChevronDown />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem
+                  onClick={() => router.push("/create-meeting")}
+                >
+                  Create Meeting
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => router.push("/dashboard/meeting-type")}
+                >
+                  My Meeting
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => router.push("/dashboard/scheduled-meeting")}
+                >
+                  Scheduled Meeting
+                </DropdownMenuItem>
 
-              <DropdownMenuItem>
-                <LogoutLink>Logout</LogoutLink>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+                <DropdownMenuItem>
+                  <LogoutLink>Logout</LogoutLink>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </div>
     )

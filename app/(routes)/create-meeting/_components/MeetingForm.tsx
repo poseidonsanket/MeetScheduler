@@ -29,6 +29,7 @@ function MeetingForm({ setFormValue, formValue }: any) {
   const { user }: any = useKindeBrowserClient();
   const db = getFirestore(app);
   const router = useRouter();
+  console.log(formValue);
   useEffect(() => {
     setFormValue({
       eventName: eventName,
@@ -134,7 +135,9 @@ function MeetingForm({ setFormValue, formValue }: any) {
             <h2 className="font-bold">Add {location} Url *</h2>
             <Input
               placeholder="Add Url"
-              onChange={(event: any) => setLocationUrl(event.target.value)}
+              onChange={(event: any) => {
+                setLocationUrl(event.target.value);
+              }}
             />
           </>
         )}

@@ -6,10 +6,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CalendarCheck, Clock, Timer } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 function ScheduledMeetingList({ meetingList }: any) {
+  console.log(meetingList);
   return (
     <div>
       {meetingList &&
@@ -26,16 +26,22 @@ function ScheduledMeetingList({ meetingList }: any) {
                     </h2>
                     <h2 className="flex gap-2">
                       <CalendarCheck />
-                      {new Date(meeting.date.toDate()).toLocaleDateString()}{" "}
+                      {new Date(
+                        meeting.date.toDate()
+                      ).toLocaleDateString()}{" "}
                     </h2>
                     <h2 className="flex gap-2">
                       <Timer />
                       {meeting.time}{" "}
                     </h2>
                   </div>
-                  <Link href={meeting.locationUrl}>
+                  <a
+                    href={meeting.locationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button className="mt-5">Join Now</Button>
-                  </Link>
+                  </a>
                 </div>
               </AccordionContent>
             </AccordionItem>
