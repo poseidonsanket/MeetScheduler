@@ -38,7 +38,7 @@ function MeetingForm({ setFormValue, formValue }: any) {
       locationUrl: locationUrl,
       themeColor: themeColor,
     });
-  }, [eventName, duration, locationType, locationUrl, themeColor]);
+  }, [eventName, duration, locationType, locationUrl, themeColor,setFormValue]);
 
   const date = formValue?.dateString;
   const time = formValue?.timeSlot;

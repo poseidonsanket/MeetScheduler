@@ -22,7 +22,7 @@ function PreviewMeeting({ formValue, setFormValue }: any) {
         timeSlot: timeSlot,
       });
     }
-  }, [date, timeSlot]);
+  }, [date, timeSlot, setFormValue]);
 
   /**
    * Used to create timeslot depends on interval
