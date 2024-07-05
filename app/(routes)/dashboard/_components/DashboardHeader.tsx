@@ -42,21 +42,9 @@ function DashboardHeader() {
               <DropdownMenuContent>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem
-                  onClick={() => router.push("/create-meeting")}
-                >
-                  Create Meeting
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => router.push("/dashboard/meeting-type")}
-                >
-                  My Meeting
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={() => router.push("/dashboard/scheduled-meeting")}
-                >
-                  Scheduled Meeting
-                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => router.push("/create-meeting")}>Create Meeting</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => router.push("/dashboard/meeting-type")}>My Meeting</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => router.push("/dashboard/scheduled-meeting")}>Scheduled Meeting</DropdownMenuItem>
 
                 <DropdownMenuItem>
                   <LogoutLink>Logout</LogoutLink>
