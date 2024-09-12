@@ -137,12 +137,6 @@ function MeetingEventList() {
               >
                 <Copy className="h-4 w-4" /> Copy Link{" "}
               </h2>
-              <Button
-                variant="outline"
-                className="rounded-full text-primary border-primary "
-              >
-                Share
-              </Button>
             </div>
           </div>
         ))

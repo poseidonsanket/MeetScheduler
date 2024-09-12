@@ -73,7 +73,7 @@ function PreviewMeeting({ formValue, setFormValue }: any) {
           </div>
         </div>
         {/* Time & Date Selction  */}
-        <div className="md:col-span-2 flex px-4">
+        <div className="md:col-span-2 lg:col-span-2 lg:flex px-4">
           <div className="flex flex-col">
             <h2 className="font-bold text-lg">Select Date & Time</h2>
             <Calendar

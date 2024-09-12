@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function DashboardHeader() {
   const { user }: any = useKindeBrowserClient();
@@ -24,7 +25,9 @@ function DashboardHeader() {
     user && (
       <div className="flex justify-between items-center ">
         <header className="bg-white p-5">
-          <div className="text-xl font-bold">Meeting Scheduler</div>
+          <Link href="/dashboard">
+            <div className="text-xl font-bold">Meeting Scheduler</div>
+          </Link>
         </header>
         <div className="pr-5">
           <div className="">
@@ -42,9 +45,21 @@ function DashboardHeader() {
               <DropdownMenuContent>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => router.push("/create-meeting")}>Create Meeting</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push("/dashboard/meeting-type")}>My Meeting</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => router.push("/dashboard/scheduled-meeting")}>Scheduled Meeting</DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => router.push("/create-meeting")}
+                >
+                  Create Meeting
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => router.push("/dashboard/meeting-type")}
+                >
+                  My Meeting
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => router.push("/dashboard/scheduled-meeting")}
+                >
+                  Scheduled Meeting
+                </DropdownMenuItem>
 
                 <DropdownMenuItem>
                   <LogoutLink>Logout</LogoutLink>

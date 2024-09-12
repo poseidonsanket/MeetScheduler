@@ -19,21 +19,7 @@ function Header() {
           alt="logo"
           className="w-[150px] md:w-[200px]"
         />
-        <ul className="hidden md:flex gap-14 font-medium text-lg">
-          <li className="hover:text-primary transition-all duration-300 cursor-pointer">
-            Product
-          </li>
-          <li className="hover:text-primary transition-all duration-300 cursor-pointer">
-            Pricing
-          </li>
-          <li className="hover:text-primary transition-all duration-300 cursor-pointer">
-            Contact us
-          </li>
-          <li className="hover:text-primary transition-all duration-300 cursor-pointer">
-            About Us
-          </li>
-        </ul>
-        <div className="flex gap-5">
+        <div className="flex lg:gap-5 gap-2">
           <LoginLink>
             <Button variant="ghost">Login</Button>
           </LoginLink>

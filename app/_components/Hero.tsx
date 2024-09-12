@@ -37,8 +37,8 @@ function Hero() {
           alt="img"
         />
       </div>
-      <div className="text-center max-w-3xl">
-        <h2 className="font-bold text-[60px] text-slate-700">
+      <div className="text-center lg:max-w-3xl max-w-xl lg:mx-0 mx-10">
+        <h2 className="font-bold lg:text-[60px] text-[30px] text-slate-700">
           Easy scheduling ahead
         </h2>
         <h2 className="text-xl mt-5 text-slate-500">
@@ -47,7 +47,7 @@ function Hero() {
         </h2>
         <div className="flex gap-4 flex-col mt-5">
           <h3 className="text-sm">Sign Up free with Google and Facebook</h3>
-          <div className="flex justify-center gap-8">
+          <div className="flex justify-center lg:gap-8 gap-4">
             <LoginLink>
               {" "}
               <Button className="p-7 flex gap-4">
